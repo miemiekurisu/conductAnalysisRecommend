@@ -3,15 +3,6 @@ from sqlobject import *
 import setting
 import os
 
-db_filename = os.path.abspath(setting.dbName)
-print db_filename
-if os.path.exists(db_filename):
-    os.unlink(db_filename)
-connection_string = 'sqlite:' + db_filename
-connection=connectionForURI(connection_string)
-sqlhub.processConnection = connection
-
-
 class BankInfo(SQLObject):
     dm = StringCol(length=100)
     ms = StringCol(length=100)
@@ -50,4 +41,19 @@ class ConductInfo(SQLObject):
     yjkhzdnsyl=DecimalCol(size=50,precision=20)#double
     yjkhzgnsyl=DecimalCol(size=50,precision=20)#double
 
-ConductInfo.createTable()
+class SalesRange(SQLObject):
+    cpxsqy = StringCol(length=500)
+    cpid = StringCol(length=500)
+    
+def reload_db():
+    db_filename = os.path.abspath(setting.dbName)
+    print db_filename
+    if os.path.exists(db_filename):
+        os.unlink(db_filename)
+    connection_string = 'sqlite:' + db_filename
+    connection=connectionForURI(connection_string)
+    sqlhub.processConnection = connection
+    BankInfo.createTable()
+    ConductInfo.createTable()
+    SalesRange.createTable()
+    connection.close()

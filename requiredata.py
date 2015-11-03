@@ -4,12 +4,14 @@ import urllib2
 import json
 import math
 import setting
+import aspect
 
 def queryBankInfo(queryUrl,param):
     return dataReq(queryUrl,param)
     
     
 #{'cpzt' : '02','pagenum':'1'}
+@aspect.timeit
 def queryAllResData(queryUrl,param):
     param['pagenum']=1
     firstpage = dataReq(queryUrl,param)
