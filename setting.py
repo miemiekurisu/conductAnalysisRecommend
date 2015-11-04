@@ -1,5 +1,6 @@
 #-*-encoding:utf-8-*-
 
+aspect_level='on'
 bankInfo='http://www.chinawealth.com.cn/dmmsQuery.go'
 resData='http://www.chinawealth.com.cn/lccpAllProJzyServlet.go'
 saleRange='http://www.chinawealth.com.cn/cpxsqyQuery.go'

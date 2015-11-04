@@ -2,7 +2,7 @@
 import sqlite3
 import setting
 import requiredata as rd
-import * from dataObject
+from dataObject import * 
 
 insertResStr='''insert into %s (%s) values(%s)'''
 

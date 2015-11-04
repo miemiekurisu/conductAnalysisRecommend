@@ -11,7 +11,6 @@ def queryBankInfo(queryUrl,param):
     
     
 #{'cpzt' : '02','pagenum':'1'}
-@aspect.timeit
 def queryAllResData(queryUrl,param):
     param['pagenum']=1
     firstpage = dataReq(queryUrl,param)
