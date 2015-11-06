@@ -17,6 +17,7 @@ def queryAllResData(queryUrl,param):
     resData = firstpage.get('List')
     count = firstpage.get('Count')
     all_pg_num = int(math.ceil(count/setting.pageUp))
+    print "page number:",all_pg_num
     for i in range(2,all_pg_num+1):
         pageData = queryResDataPage(queryUrl,param,i)
         resData.extend(pageData.get('List'))
