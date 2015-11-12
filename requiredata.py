@@ -27,9 +27,20 @@ def queryResDataPage(queryUrl,param,pageNumber):
     param['pagenum']=pageNumber
     return dataReq(queryUrl,param)
 
+def querySalesRange(cpid):
+    rangeList = dataReq(setting.saleRange,{'cpid':cpid}).get('List')
+    if rangeList[0]!=None:
+        resList = []
+        for i in rangeList:
+            resList.append((cpid,i.get('cpxsqy')))
+        return resList
+    else:
+        return None
+
 def dataReq(queryUrl,param):
     opener = urllib2.build_opener(urllib2.HTTPRedirectHandler(),urllib2.HTTPHandler(debuglevel=0),urllib2.HTTPSHandler(debuglevel=0))
     postdata = urllib.urlencode(param)
     response = opener.open(queryUrl, postdata)
     data = response.read()
+    opener.close()
     return json.loads(data.decode('utf-8'))

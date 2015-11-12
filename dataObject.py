@@ -42,8 +42,9 @@ class ConductInfo(SQLObject):
     yjkhzgnsyl=DecimalCol(size=50,precision=20)#double
 
 class SalesRange(SQLObject):
-    cpxsqy = StringCol(length=500)
     cpid = StringCol(length=500)
+    cpxsqy = StringCol(length=500)
+    
     
 def reload_db():
     db_filename = os.path.abspath(setting.dbName)

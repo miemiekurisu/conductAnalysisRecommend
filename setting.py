@@ -11,3 +11,4 @@ bankField="'dm','ms'"
 conductTable = 'conduct_info'
 conductField='bqjz,cpdjbm,cpdm,cpfxdj,cpid,cpjz,cplx,cplxms,cpms,cpqsrq,cpqx,cpsylx,cpsylxms,cpxsqy,cpyjzzrq,cpztms,csjz,dqsjsyl,fxdjms,fxjgdm,fxjgms,kfzqjsr,kfzqqsr,mjbz,mjjsrq,mjqsrq,orderby,qdxsje,qxms,xsqy,yjkhzdnsyl,yjkhzgnsyl'
 salesRangeTable = 'sales_range'
+salesRangeField='cpid,cpxsqy'
