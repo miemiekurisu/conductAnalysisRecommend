@@ -28,7 +28,3 @@ def getOnePage(cpzt='02',pagenum=1):
         param['pagenum']=pagenum
     data =  post(queryUrl, param)
     return data.get('Count'),data.get('List')
-
-def ConductInfo():
-    pass
-    

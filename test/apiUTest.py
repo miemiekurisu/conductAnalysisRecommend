@@ -7,6 +7,8 @@ Created on 2015年11月24日
 
 import unittest
 import api.ConductInfo as conduct
+import api.BankInfo as bank
+import api.SalesRange as sr
 
 class apiUTest(unittest.TestCase):
     
@@ -17,6 +19,14 @@ class apiUTest(unittest.TestCase):
     def test_all(self):
         data = conduct.getAll()
         print len(data)
-
+        
+    def test_bank_getBanks(self):
+        data = bank.getBanks()
+        print data[0]
+    
+    def test_sr_query_sales_range(self):
+        data = sr.querySalesRange('943032')
+        print data[1]
+    
 if __name__ == '__main__':
     unittest.main()
