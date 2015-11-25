@@ -5,10 +5,11 @@ socksip = '127.0.0.1'
 socksport = 1080
 aspect_level='on'
 baseUrl='http://www.chinawealth.com.cn'
-bankInfo='http://www.chinawealth.com.cn/dmmsQuery.go'
-resData='http://www.chinawealth.com.cn/lccpAllProJzyServlet.go'
-saleRange='http://www.chinawealth.com.cn/cpxsqyQuery.go'
 pageUp=500.0
+dblink ='mongodb://localhost/'
+dbname = 'car'
+
+
 dbName='car.db'
 bankInfoTable = 'bank_info'
 bankField="'dm','ms'"

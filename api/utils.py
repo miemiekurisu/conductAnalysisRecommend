@@ -10,6 +10,7 @@ import json
 import socks
 from setting import socksproxy
 from sockshandler import SocksiPyHandler
+from multiprocessing.dummy import Pool as ThreadPool 
 
 def post(queryUrl,param,timeout=60):
     if socksproxy:
@@ -22,3 +23,6 @@ def post(queryUrl,param,timeout=60):
     data = response.read()
     opener.close()
     return json.loads(data.decode('utf-8'))
+
+def mult_process():
+    pass

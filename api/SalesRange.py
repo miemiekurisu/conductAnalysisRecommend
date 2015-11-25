@@ -18,6 +18,6 @@ def querySalesRange(cpid=None,pagenum=1):
     data = post(queryUrl,param)
     rangeList = data.get('List')
     if rangeList[0]!=None:
-        return [(cpid,i.get('cpxsqy')) for i in rangeList]
+        return [{'cpid':cpid,'cpxsqy':i.get('cpxsqy')} for i in rangeList]
     else:
         return None
