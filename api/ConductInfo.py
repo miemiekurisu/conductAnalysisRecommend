@@ -8,6 +8,7 @@ from api.utils import post
 from setting import baseUrl
 from setting import pageUp
 from math import ceil
+import json 
 
 def getAll(cpzt='02'):
     param={}
@@ -27,4 +28,4 @@ def getOnePage(cpzt='02',pagenum=1):
     if pagenum:
         param['pagenum']=pagenum
     data =  post(queryUrl, param)
-    return data.get('Count'),data.get('List')
+    return data.get('Count'),[json.loads(i) for i in data.get('List')]
