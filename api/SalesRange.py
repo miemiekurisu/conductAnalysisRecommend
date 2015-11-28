@@ -6,7 +6,6 @@ Created on 2015年11月24日
 '''
 from api.utils import post
 from setting import baseUrl
-saleRange='http://www.chinawealth.com.cn/cpxsqyQuery.go'
 
 def querySalesRange(cpid=None,pagenum=1):
     assert cpid != None
