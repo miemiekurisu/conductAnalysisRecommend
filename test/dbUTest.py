@@ -42,6 +42,7 @@ class dbUtest(unittest.TestCase):
         collection.insert_many(data)
         print collection.count()
         print collection.find_one()
+        collection
         client.close()
     
         

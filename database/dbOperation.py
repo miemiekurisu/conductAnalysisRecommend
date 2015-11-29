@@ -9,3 +9,13 @@ from setting import dblink
 from setting import dbname
 #client = MongoClient(dblink+'/'+dbname)
 #db=client[dbname]
+
+#insert or update ConductInfo by cpid
+def upsertConductInfo(conductInfo):
+    pass
+#upsert SalesRange
+def upsertSalesRange():
+    pass
+
+def updateBankInfo(bankinfos):
+    pass

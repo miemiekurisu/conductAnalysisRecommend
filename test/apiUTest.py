@@ -6,25 +6,34 @@ Created on 2015年11月24日
 '''
 
 import unittest
-import api.ConductInfo as conduct
-import api.BankInfo as bank
-import api.SalesRange as sr
+from api.ConductInfo import ConductInfo
+from api.BankInfo import BankInfo
+from api.SalesRange import SalesRange
 
 class apiUTest(unittest.TestCase):
     
     def test_one_page(self):
-        count,pageData = conduct.getOnePage()
-        print count, len(pageData)
+        c1 = ConductInfo()
+        count,pageData = c1.getOnePage(cpzt='02')
+        print "test_one_page:",count, len(pageData)
+        print "test_one_page,content",pageData[0].get("cpztms")
+        c2 = ConductInfo()
+        ct,pd = c2.getOnePage(cpid='917088')
+        print "one_record:",ct
+        print "one_record,pd",pd
         
     def test_all(self):
-        data = conduct.getAll()
-        print len(data)
+        conduct = ConductInfo()
+        data = conduct.getAll(cpzt='02')
+        print 'test_all:',len(data)
         
     def test_bank_getBanks(self):
+        bank = BankInfo()
         data = bank.getBanks()
         print data[0]
     
     def test_sr_query_sales_range(self):
+        sr = SalesRange()
         data = sr.querySalesRange('943032')
         print data[1]
     
