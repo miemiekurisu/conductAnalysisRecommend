@@ -28,5 +28,5 @@ class DiffLog():
         if inslist:
             insertRecords.extend([{"cpid":r, 'operation':'insert', 'date':dtt.now().strftime('%Y-%m-%d %H:%M:%S')} for r in inslist])
         collection.insert_many(insertRecords)
-        collection.close()
+        client.close()
     #     collection.remove({cpid:{$in:["917088","942381"]}}'')

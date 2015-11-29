@@ -23,7 +23,7 @@ class funcUTest(unittest.TestCase):
         rm,ins = df.compare(dbc, netc)
         print rm,'|',ins
         print df.diffInsert(rm, ins)
-        collection.close()
+        client.close()
         
         
 if __name__ == '__main__':
