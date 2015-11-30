@@ -11,11 +11,17 @@ from setting import dbname
 #db=client[dbname]
 
 #insert or update ConductInfo by cpid
-def upsertConductInfo(conductInfo):
+def upsertConductInfo(ciList):
+    pass
+
+def rmConductInfo(ciIds):
     pass
 #upsert SalesRange
 def upsertSalesRange():
     pass
 
-def updateBankInfo(bankinfos):
+def updateBankInfo(bis):
+    pass
+
+def updateSalesRange(srs):
     pass

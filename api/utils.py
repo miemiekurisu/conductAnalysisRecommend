@@ -23,6 +23,3 @@ def post(queryUrl,param,timeout=60):
     data = response.read()
     opener.close()
     return json.loads(data.decode('utf-8'))
-
-def mult_process():
-    pass

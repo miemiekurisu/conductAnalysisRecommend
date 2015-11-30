@@ -65,3 +65,16 @@ class ConductInfo():
             param['pagenum']=pagenum
         data =  post(queryUrl, param)
         return data.get('Count'), data.get('List')
+    
+    def getOneDetail(self,cpid=None):
+        assert cpid !=None
+        return self.getOneDetail(cpid)
+    
+    def muilt_ci_detail(self):
+        pass
+#  pool = ThreadPool(setting.max_download_thread)
+#         try:
+#         pool.map(create_local_file,gfs_file_id_list)
+#      finally:
+#          pool.close()
+#      return pool.join()

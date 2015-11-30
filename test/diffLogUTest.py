@@ -20,8 +20,13 @@ class funcUTest(unittest.TestCase):
         collection = database['ConductInfo']
         dbc = collection.find()
         netc = ci.getAll();
+        print len(netc)
         rm,ins = df.compare(dbc, netc)
         print rm,'|',ins
+        if rm:
+            print "--",len(rm)
+        if ins:
+            print '==',len(ins)
         print df.diffInsert(rm, ins)
         client.close()
         

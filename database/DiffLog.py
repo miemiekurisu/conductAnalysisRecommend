@@ -18,15 +18,15 @@ class DiffLog():
         foradd = netcps.difference(eq)
         return forrm, foradd
     
-    def diffInsert(self,rmlist, inslist):
+    def diffInsert(self,rmset, insset):
         client = MongoClient(dblink + '/' + dbname)
         database = client[dbname]
         collection = database['DiffRecord']
         insertRecords = []
-        if rmlist:
-            insertRecords.extend([{"cpid":r, 'operation':'rm', 'date':dtt.now().strftime('%Y-%m-%d %H:%M:%S')} for r in rmlist])
-        if inslist:
-            insertRecords.extend([{"cpid":r, 'operation':'insert', 'date':dtt.now().strftime('%Y-%m-%d %H:%M:%S')} for r in inslist])
+        if rmset:
+            insertRecords.extend([{"cpid":r, 'operation':'rm', 'date':dtt.now().strftime('%Y-%m-%d %H:%M:%S')} for r in rmset])
+        if insset:
+            insertRecords.extend([{"cpid":r, 'operation':'insert', 'date':dtt.now().strftime('%Y-%m-%d %H:%M:%S')} for r in insset])
         collection.insert_many(insertRecords)
         client.close()
     #     collection.remove({cpid:{$in:["917088","942381"]}}'')
