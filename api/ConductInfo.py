@@ -7,8 +7,8 @@ Created on 2015年11月24日
 from math import ceil
 
 from api.utils import post
-from setting import baseUrl
-from setting import pageUp
+from setting import baseUrl,pageUp,max_download_thread
+from multiprocessing.dummy import Pool as ThreadPool 
 
 class ConductInfo():
     convdict = {
@@ -70,11 +70,11 @@ class ConductInfo():
         assert cpid !=None
         return self.getOneDetail(cpid)
     
-    def muilt_ci_detail(self):
-        pass
-#  pool = ThreadPool(setting.max_download_thread)
-#         try:
-#         pool.map(create_local_file,gfs_file_id_list)
-#      finally:
-#          pool.close()
-#      return pool.join()
+    def muilt_ci_detail(self,cpid_list):
+        print len(cpid_list)
+        pool = ThreadPool(max_download_thread)
+        try:
+            pool.map(self.getOneDetail,cpid_list)
+        finally:
+            pool.close()
+        return pool.join()

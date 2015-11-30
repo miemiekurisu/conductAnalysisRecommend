@@ -8,6 +8,7 @@ baseUrl='http://www.chinawealth.com.cn'
 pageUp=500.0
 dblink ='mongodb://localhost/'
 dbname = 'car'
+max_download_thread = 5
 
 
 dbName='car.db'

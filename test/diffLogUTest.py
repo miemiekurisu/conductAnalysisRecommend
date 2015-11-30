@@ -10,6 +10,9 @@ from setting import dblink
 from setting import dbname
 from api.ConductInfo import ConductInfo
 from database.DiffLog import DiffLog
+import sys
+sys.setrecursionlimit(1000*2)
+
 class funcUTest(unittest.TestCase):
     
     def test_compare(self):
@@ -29,6 +32,8 @@ class funcUTest(unittest.TestCase):
             print '==',len(ins)
         print df.diffInsert(rm, ins)
         client.close()
+        muilt = ci.muilt_ci_detail(list(ins))
+        print len(muilt)
         
         
 if __name__ == '__main__':
